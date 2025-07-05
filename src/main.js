@@ -17,7 +17,7 @@ function mock(text) {
 function setupEmbedThumbnailStuff() {
   document
     .querySelector('meta[property="og:image"]')
-    .setAttribute('content', window.location + 'mock-text-generator.png?')
+    .setAttribute('content', window.location + 'mock-text-generator.png?v=2')
   document
     .querySelector('meta[property="og:url"]')
     .setAttribute('content', window.location)
