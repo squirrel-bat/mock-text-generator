@@ -1,2 +1,3 @@
-# mock-text-generator
+# Mock Text Generator
+
 tHe DeFiNiTivE mOcK tExT gEnErAtOr
