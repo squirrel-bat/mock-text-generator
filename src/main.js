@@ -1,3 +1,11 @@
+function setupEmbedThumbnailStuff() {
+  document.querySelectorAll('.meta-img').forEach((el) => {
+    el.setAttribute('content', window.location + 'mock-text-generator.png')
+  })
+  document.getElementById('meta-url').setAttribute('content', window.location)
+}
+setupEmbedThumbnailStuff()
+
 function mock(text) {
   let capitalize = false
   return text
@@ -13,21 +21,11 @@ function mock(text) {
     })
     .join('')
 }
-
-function setupEmbedThumbnailStuff() {
-  document.querySelectorAll('.meta-img').forEach((el) => {
-    el.setAttribute('content', window.location + 'mock-text-generator.png')
-  })
-  document.getElementById('meta-url').setAttribute('content', window.location)
-}
-
 window.addEventListener('load', () => {
   let successDespawnTimer
   let inputElement = document.getElementById('input')
   let outputElement = document.getElementById('output')
   let copyBtn = document.getElementById('copy-btn')
-
-  setupEmbedThumbnailStuff()
 
   for (let event of ['keyup', 'change', 'paste']) {
     inputElement.addEventListener(event, (ev) => {
