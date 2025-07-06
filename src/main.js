@@ -1,8 +1,11 @@
 function setupEmbedThumbnailStuff() {
-  document.querySelectorAll('.meta-img').forEach((el) => {
-    el.setAttribute('content', window.location + 'mock-text-generator.png')
-  })
-  document.getElementById('meta-url').setAttribute('content', window.location)
+  let ogImage = document.createElement('meta')
+  ogImage.setAttribute('property', 'og:image')
+  ogImage.setAttribute('content', window.location + 'mock-text-generator.png')
+  let ogUrl = document.createElement('meta')
+  ogUrl.setAttribute('property', 'og:url')
+  ogUrl.setAttribute('content', window.location)
+  document.head.append(ogUrl, ogImage)
 }
 setupEmbedThumbnailStuff()
 
