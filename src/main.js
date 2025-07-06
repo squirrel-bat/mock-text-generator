@@ -15,12 +15,10 @@ function mock(text) {
 }
 
 function setupEmbedThumbnailStuff() {
-  document
-    .querySelector('meta[property="og:image"]')
-    .setAttribute('content', window.location + 'mock-text-generator.png?v=2')
-  document
-    .querySelector('meta[property="og:url"]')
-    .setAttribute('content', window.location)
+  document.querySelectorAll('.meta-img').forEach((el) => {
+    el.setAttribute('content', window.location + 'mock-text-generator.png')
+  })
+  document.getElementById('meta-url').setAttribute('content', window.location)
 }
 
 window.addEventListener('load', () => {
