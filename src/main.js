@@ -1,9 +1,19 @@
 function mock(text) {
   let capitalize = false
+  let exclamationChain = 0
   return text
     .split('')
     .map((char) => {
-      if (/[a-zA-Z]/g.test(char)) {
+      if (/[a-zA-Z!]/g.test(char)) {
+        if (char == '!') {
+          exclamationChain += 1
+          if (exclamationChain > 4) {
+            char = '1'
+          }
+          if (exclamationChain > 6) {
+            char = Math.round(Math.random()) ? '1' : '!'
+          }
+        }
         if (['L', 'l'].includes(char)) capitalize = true
         if (['I', 'i'].includes(char)) capitalize = false
         char = capitalize ? char.toUpperCase() : char.toLowerCase()
