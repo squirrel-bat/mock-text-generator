@@ -50,7 +50,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 1rem;
   background: linear-gradient(
     to right,
     var(--bg-sand-dark) -90%,
@@ -369,6 +369,12 @@ textarea {
   border: 2px solid transparent;
   border-left: none;
   border-right: none;
+  text-align: center;
+}
+@media (hover: hover) {
+  #output {
+    font-size: 1.5rem;
+  }
 }
 #output:focus {
   outline: none !important;
